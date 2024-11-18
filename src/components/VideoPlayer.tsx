@@ -1,5 +1,5 @@
 "use client";
-import * as React from 'react';
+import * as React from "react";
 
 interface VideoPlayerProps {
   videoUrl: string;
@@ -8,7 +8,15 @@ interface VideoPlayerProps {
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, title = "Video Player" }) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg" style={{ paddingTop: "56.25%" }}>
+    <div 
+      id="video-player-section"
+      className="relative overflow-hidden rounded-lg shadow-lg mx-auto mt-16" // Increased margin from mt-8 to mt-16
+      style={{
+        width: "95%", // Large width for prominent display
+        maxWidth: "1000px", // Maximum width for larger screens
+        aspectRatio: "16/9", // Maintain a 16:9 aspect ratio
+      }}
+    >
       <iframe
         src={videoUrl}
         frameBorder="0"

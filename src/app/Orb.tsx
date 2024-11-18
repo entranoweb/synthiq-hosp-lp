@@ -165,10 +165,20 @@ const Orb: React.FC = () => {
   };
 
   return (
-    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#000' }}>
-      {!showOrb ? (
-        <div style={{ textAlign: 'center', color: '#fff', maxWidth: '500px' }}>
-          <h2 style={{
+    <div
+    style={{
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#000',
+    }}
+  >
+    {!showOrb ? (
+      <div style={{ textAlign: 'center', color: '#fff', maxWidth: '500px' }}>
+        <h2
+          style={{
             fontSize: '2rem',
             fontWeight: '500',
             letterSpacing: '-0.025em',
@@ -176,109 +186,180 @@ const Orb: React.FC = () => {
             textAlign: 'center',
             transition: 'color 0.3s ease',
             cursor: 'pointer',
-            marginBottom: '20px',
+            marginBottom: '50px',
           }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#ddd'}
-            onMouseLeave={(e) => e.currentTarget.style.color = '#fff'}>
-            Experience Our AI Voice Agent
-          </h2>
-          <form onSubmit={handleFormSubmit} style={{ textAlign: 'center', backgroundColor: '#000', padding: '25px 20px', borderRadius: '10px', boxShadow: '0px 0px 20px rgba(22, 98, 212, 0.7)', transition: 'box-shadow 0.3s ease', marginBottom: '30px' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: '500', color: '#ddd', marginBottom: '15px' }}>Enter Your Details</h2>
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={userInfo.name}
-                onChange={handleInputChange}
-                required
-                style={{
-                  padding: '12px', margin: '10px', width: '90%', borderRadius: '5px',
-                  backgroundColor: '#444', border: '1px solid #555', color: '#fff',
-                  transition: 'background-color 0.3s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={userInfo.email}
-                onChange={handleInputChange}
-                required
-                style={{
-                  padding: '12px', margin: '10px', width: '90%', borderRadius: '5px',
-                  backgroundColor: '#444', border: '1px solid #555', color: '#fff',
-                  transition: 'background-color 0.3s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="company"
-                placeholder="Company Name"
-                value={userInfo.company}
-                onChange={handleInputChange}
-                required
-                style={{
-                  padding: '12px', margin: '10px', width: '90%', borderRadius: '5px',
-                  backgroundColor: '#444', border: '1px solid #555', color: '#fff',
-                  transition: 'background-color 0.3s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                name="contact"
-                placeholder="Contact Number"
-                value={userInfo.contact}
-                onChange={handleInputChange}
-                required
-                style={{
-                  padding: '12px', margin: '10px', width: '90%', borderRadius: '5px',
-                  backgroundColor: '#444', border: '1px solid #555', color: '#fff',
-                  transition: 'background-color 0.3s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
-              />
-            </div>
-
-            <button type="submit" style={{ padding: '12px 24px', borderRadius: '5px', backgroundColor: '#1662D4', color: '#fff', cursor: 'pointer', border: 'none', fontSize: '1rem' }}>Submit</button>
-          </form>
-        </div>
-      ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', marginTop: '20px', marginBottom: '20px', }}> {/* Added marginTop to provide space */}
-          
-          <div id="out" className="hover:cursor-pointer" onClick={toggleCall} style={{ height: '100%', width: '100%' }}></div>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: '500',
-            color: '#fff',
-            letterSpacing: '-0.025em',
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#ddd')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
+        >
+          Experience Our AI Voice Agent
+        </h2>
+        <form
+          onSubmit={handleFormSubmit}
+          style={{
             textAlign: 'center',
-            transition: 'color 0.3s ease',
-            cursor: 'pointer',
-            marginBottom: '15 px',
-            
-            
+            backgroundColor: '#000',
+            padding: '25px 20px',
+            borderRadius: '10px',
+            boxShadow: '0px 0px 20px rgba(22, 98, 212, 0.7)',
+            transition: 'box-shadow 0.3s ease',
+            marginBottom: '30px',
           }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#ddd'}
-            onMouseLeave={(e) => e.currentTarget.style.color = '#fff'}>
-            Click on the orb to interact with the call assistant
+        >
+          <h2
+            style={{
+              fontSize: '2rem',
+              fontWeight: '500',
+              color: '#ddd',
+              marginBottom: '15px',
+            }}
+          >
+            Enter Your Details
           </h2>
-        </div>
-      )}
-    </div>
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={userInfo.name}
+              onChange={handleInputChange}
+              required
+              style={{
+                padding: '12px',
+                margin: '10px',
+                width: '90%',
+                borderRadius: '5px',
+                backgroundColor: '#444',
+                border: '1px solid #555',
+                color: '#fff',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={userInfo.email}
+              onChange={handleInputChange}
+              required
+              style={{
+                padding: '12px',
+                margin: '10px',
+                width: '90%',
+                borderRadius: '5px',
+                backgroundColor: '#444',
+                border: '1px solid #555',
+                color: '#fff',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company Name"
+              value={userInfo.company}
+              onChange={handleInputChange}
+              required
+              style={{
+                padding: '12px',
+                margin: '10px',
+                width: '90%',
+                borderRadius: '5px',
+                backgroundColor: '#444',
+                border: '1px solid #555',
+                color: '#fff',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
+            />
+          </div>
+          <div>
+            <input
+              type="tel"
+              name="contact"
+              placeholder="Contact Number"
+              value={userInfo.contact}
+              onChange={handleInputChange}
+              required
+              style={{
+                padding: '12px',
+                margin: '10px',
+                width: '90%',
+                borderRadius: '5px',
+                backgroundColor: '#444',
+                border: '1px solid #555',
+                color: '#fff',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#555')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#444')}
+            />
+          </div>
+  
+          <button
+            type="submit"
+            style={{
+              padding: '12px 24px',
+              borderRadius: '5px',
+              backgroundColor: '#1662D4',
+              color: '#fff',
+              cursor: 'pointer',
+              border: 'none',
+              fontSize: '1rem',
+            }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    ) : (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          // justifyContent: 'center',
+          textAlign: 'center',
+          // marginTop: '30px', // More space above the section
+        }}
+      >
+        <h2
+          style={{
+          fontSize: '2.5rem',
+          fontWeight: '500',
+          color: '#fff',
+          letterSpacing: '-0.025em',
+          marginTop: '50px',
+          marginBottom: '5px',// Bring it closer to the orb
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#ddd')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
+        >
+           Click the orb to start a conversation with the Voice Assistant
+        </h2>
+        <div
+          id="out"
+          className="hover:cursor-pointer"
+          onClick={toggleCall}
+          style={{
+            height: '100%',
+            width: '100%',
+          }}
+        ></div>
+
+      </div>
+    )}
+  </div>
+  
+  
   );
 };
 

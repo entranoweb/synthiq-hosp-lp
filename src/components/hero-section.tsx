@@ -108,9 +108,21 @@ export function HeroSection() {
                     >
                       Transform your hotel's customer service with an intelligent voice assistant that handles bookings, inquiries, and guest requests - without adding staff.
                     </p>
-                    <div className={"flex justify-center mt-5"}>
-                        <ActionButton label={"Experience live demo"} />
-                    </div>
+                    <div className={"flex justify-center gap-4 mt-5"}>
+                        <ActionButton label={"Experience live demo"} /> 
+                        
+                        <ActionButton
+        label={"Watch how it works"}
+        onClick={() => {
+            const videoSection = document.getElementById("video-player-section");
+            if (videoSection) {
+                videoSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }}
+    />
+                  
+    
+</div>
                 </div>
             </motion.section>
         </>

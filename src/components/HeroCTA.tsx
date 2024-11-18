@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button } from './Button';
+import Link from 'next/link';
 
 const HeroCTA: React.FC = () => {
   return (
-    <Button variant="solid">
-      <span className="text-white">Get Started</span>  {/* White text */}
-    </Button>
+    <Link href="https://synthiq.io/contact-us/">
+      <Button variant="solid">
+        <span className="text-white">Get Started</span> {/* White text */}
+      </Button>
+    </Link>
   );
 };
 
